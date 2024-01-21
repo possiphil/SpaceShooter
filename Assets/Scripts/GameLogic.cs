@@ -14,12 +14,11 @@ public class GameLogic : MonoBehaviour
     [SerializeField] private GameObject asteroid;
     
     public static int score;
-    public static int lives = 3;
+    public static int lives;
     [SerializeField] private GameObject losingCanvas;
 
     private void Start()
     {
-        SetLivesAndScore();
         SpawnAsteroids();
     }
 
@@ -29,9 +28,9 @@ public class GameLogic : MonoBehaviour
         livesUI.text = "Lives: " + lives;
     }
 
-    private void SetLivesAndScore()
+    public static void SetLivesAndScore(float hp)
     {
-        lives = 3;
+        lives = (int) hp;
         score = 0;
     }
     
